@@ -8,12 +8,11 @@ public class Response_token {
     @SerializedName("token")
     @Expose
     private String token;
-
     public String getToken() {
         return token;
     }
+    public void setToken(String token) {
 
-    /*public void setToken(String token) {
         this.token = token;
-    }*/
+    }
 }
