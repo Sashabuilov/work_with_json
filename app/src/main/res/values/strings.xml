@@ -2,10 +2,12 @@
     <string name="app_name">jsontestapp</string>
     <string name="userdata">Данные юзера</string>
     <string name="gettoken">Токен</string>
-    <string name="name">Имя:</string>
-    <string name="fam">Фамилия:</string>
-    <string name="username">Username:</string>
-    <string name="email">email:</string>
-    <string name="city">Город:</string>
-    <string name="info">Инфо:</string>
+    <string name="name">Имя</string>
+    <string name="fam">Фамилия</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="role">Роль</string>
+    <string name="phone">Телефон</string>
+    <string name="addres">Адрес</string>
+    <string name="info">Инфо</string>
 </resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/colorGray"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/btn_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickbtntoken"
+        android:text="@string/gettoken"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:ems="7"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/btn_user_data"
+        />
+
+    <Button
+        android:id="@+id/btn_user_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click_userdata"
+        android:text="@string/userdata"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:ems="7"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+         />
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/man" />
+
+    <TextView
+        android:id="@+id/tv_name_out"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/btn_user_data"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:singleLine="true"
+        android:text="@string/name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_familia_out"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:singleLine="true"
+        android:layout_below="@id/tv_name_out"
+        android:layout_alignLeft="@id/tv_name_out"
+        android:text="@string/fam"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_username_out"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:singleLine="true"
+        android:layout_below="@id/tv_familia_out"
+        android:layout_alignLeft="@id/iv_avatar"
+        android:layout_marginTop="10dp"
+        android:text="@string/username"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_email_out"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:singleLine="true"
+        android:layout_below="@id/tv_username_out"
+        android:layout_alignLeft="@id/tv_username_out"
+        android:layout_marginTop="10dp"
+        android:text="@string/email"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_role_out"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:singleLine="true"
+        android:layout_below="@id/tv_email_out"
+        android:layout_alignLeft="@id/tv_email_out"
+        android:layout_marginTop="10dp"
+        android:text="@string/role"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_phone_out"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:singleLine="true"
+        android:layout_below="@id/tv_role_out"
+        android:layout_alignLeft="@id/tv_role_out"
+        android:layout_marginTop="10dp"
+        android:text="@string/phone"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_address_out"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:singleLine="true"
+        android:layout_below="@id/tv_phone_out"
+        android:layout_alignLeft="@id/tv_phone_out"
+        android:layout_marginTop="10dp"
+        android:text="@string/addres"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_info_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_address_out"
+        android:layout_alignLeft="@id/tv_address_out"
+        android:layout_marginTop="10dp"
+        android:text="@string/info"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+
+        />
+
+
+</RelativeLayout>

@@ -1,27 +1,33 @@
 package com.example.jsontestapp;
 
+import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
-TextView tv1,tv2,tv3,tv4;
+TextView tv_name,tv_familia,tv_username,tv_email,
+    tv_role,tv_phone,tv_address,tv_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        tv1=findViewById(R.id.tv_name);
-        tv2=findViewById(R.id.tv_fam);
-        tv3=findViewById(R.id.tv_username);
-
+        setContentView(R.layout.activity_main_2);
+        tv_name=findViewById(R.id.tv_name_out);
+        tv_familia=findViewById(R.id.tv_familia_out);
+        tv_username=findViewById(R.id.tv_username_out);
+        tv_email=findViewById(R.id.tv_email_out);
+        tv_role=findViewById(R.id.tv_role_out);
+        tv_phone=findViewById(R.id.tv_phone_out);
+        tv_address=findViewById(R.id.tv_address_out);
+        tv_info=findViewById(R.id.tv_info_out);
     }
 //----------------Получение токена-----------------------------
 public void clickbtntoken(View view) {
@@ -39,20 +45,21 @@ public void clickbtntoken(View view) {
                     public void onResponse(@NonNull Call<Response_token> call,
                                            @NonNull Response<Response_token> response) {
 
-                        tv1.setText(response.body().getToken());
+                        tv_name.setText(response.body().getToken());
 
                     }
 
                     @Override
                     public void onFailure(Call<Response_token> call, Throwable t) {
-                        tv1.setText("NO");
+                        tv_name.setText("NO");
                     }
                 });
         }
 
 //---------------------Получение User Data------------------------
     public void click_userdata(View view) {
-        tv1.setText("");
+        Toast toast =Toast.makeText(getApplicationContext(),"идёт загрузка данных", Toast.LENGTH_SHORT);
+        toast.show();
 
                 NetworkService.getInstance()
                 .getJSONApi()
@@ -61,8 +68,6 @@ public void clickbtntoken(View view) {
                     @Override
                     public void onResponse(Call<Response_User> call, Response<Response_User> response) {
 
-
-                        String id = response.body().getId();
                         String firstname = response.body().getFirstName();
                         String lastname = response.body().getLastName();
                         String username = response.body().getUserName();
@@ -71,22 +76,21 @@ public void clickbtntoken(View view) {
                         String phone = response.body().getPhone();
                         String address = response.body().getAddress();
                         String info = response.body().getInfo();
-
-                        //tv1.append(id + "\n");
-                        tv1.setText(firstname);
-                        tv2.setText(lastname);
-                        tv3.setText(username);
-                       /* tv1.append(lastname + "\n");
-                        tv1.append(username + "\n");
-                        tv1.append(email + "\n");
-                        tv1.append(role +"\n");
-                        tv1.append(phone + "\n");
-                        tv1.append(address + "\n");
-                        tv1.append(info + "\n");*/
+                        tv_name.setText(firstname);
+                        tv_familia.setText(lastname);
+                        tv_username.setText(username);
+                        tv_email.setText(email);
+                        tv_role.setText(role);
+                        tv_phone.setText(phone);
+                        tv_address.setText(address);
+                        tv_info.setText(info);
                     }
+
                     @Override
                     public void onFailure(Call<Response_User> call, Throwable t) {
-                        tv1.setText("NO");
+                        Toast toast =Toast.makeText(getApplicationContext(),
+                                "Проблемы с сетью, проверьте соединение", Toast.LENGTH_LONG);
+                        toast.show();
                     }
                 });
 
